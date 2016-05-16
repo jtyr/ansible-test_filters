@@ -4,17 +4,18 @@
   hosts: localhost
   gather_facts: no
   vars:
-    my_config:
-      host: localhost
-      ip: 192.68.1.13
+    my_config1:
+      host: localhost1
+      ip: 192.68.1.101
       fw:
         open: 22
-  tasks:
-    - name: Test template
-      template:
-        src: ini_template.j2
-        dest: /tmp/ini_template.txt
-    - name: Test filter
-      template:
-        src: ini_filter.j2
-        dest: /tmp/ini_filter.txt
+    my_config2:
+      host: localhost2
+      ip: 192.68.1.102
+      fw:
+        open: 22
+  roles:
+    - role_template1
+    - role_template2
+    - role_filter1
+    - role_filter2

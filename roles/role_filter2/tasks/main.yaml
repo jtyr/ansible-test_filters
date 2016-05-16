@@ -1,0 +1,6 @@
+---
+
+- name: Test template
+  template:
+    src: ini_filter.j2
+    dest: /tmp/ini_filter_role2.txt

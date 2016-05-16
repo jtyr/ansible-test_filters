@@ -1,12 +1,12 @@
 {#- First process vars without a section #}
-{%- for property, value in my_config.iteritems() | sort %}
+{%- for property, value in my_config2.iteritems() | sort %}
   {%- if value is not mapping -%}
     {{ property ~ " = " ~ value ~ "\n" }}
   {%- endif %}
 {%- endfor %}
 
 {#- Then process sections #}
-{%- for section, options in my_config.iteritems() | sort %}
+{%- for section, options in my_config2.iteritems() | sort %}
   {%- if options is mapping -%}
     {{ "\n[" ~ section ~ "]\n" }}
     {%- for property, value in options.iteritems() | sort -%}

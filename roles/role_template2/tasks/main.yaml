@@ -1,0 +1,6 @@
+---
+
+- name: Test template
+  template:
+    src: ini_template.j2
+    dest: /tmp/ini_template_role2.txt
