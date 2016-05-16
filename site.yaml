@@ -1,0 +1,20 @@
+---
+
+- name: Test
+  hosts: localhost
+  gather_facts: no
+  vars:
+    my_config:
+      host: localhost
+      ip: 192.68.1.13
+      fw:
+        open: 22
+  tasks:
+    - name: Test template
+      template:
+        src: ini_template.j2
+        dest: /tmp/ini_template.txt
+    - name: Test filter
+      template:
+        src: ini_filter.j2
+        dest: /tmp/ini_filter.txt
